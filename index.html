@@ -1,44 +1,1074 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esempio SPA - Cecire</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
     <div id="container" class="container">
         <h1>Esempio SPA - Cecire</h1>
 
         <div id="home" class="page">
+            <h2>Home</h2>
+            <p>Seleziona uno dei link presenti sotto.</p>
             <div class="row">
-                <h2>Home</h2>
-                <div class="col"><a href="#page1">Pagina 1</a></div>
-                <div class="col"><a href="#page2">Pagina 2</a></div>
-                <div class="col"><a href="#page3">Pagina 3</a></div>
+                <div class="col"><a href="#page1">Macchina di Von Neumann</a></div>
+                <div class="col"><a href="#page2">Linguaggi compilatori ed interpret</a></div>
+                <div class="col"><a href="#page3">Sistemi di numerazione</a></div>
             </div>
         </div>
         <div id="page1" class="page">
-            <div class="row">
-                <h2>Pagina 1</h2>
-                <a href="#home">Home</a>
-            </div>
+            <a href="#home">Home</a>
+            <h1 class="eckb-article-title">Macchina di Von Neumann</h1>
+            <p>Questo modello (ideato da&nbsp;<a href="https://it.wikipedia.org/wiki/John_von_Neumann">Von
+                    Neumann</a>, matematico vissuto nel XX secolo) costituisce ancora oggi l&rsquo;<span
+                    class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Architettura&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;L&amp;#039;architettura di un sistema informatico indica il modo in cui &egrave; organizzato il software, di quali componenti e moduli &egrave; composto, che ruolo hanno e in che modo comunicano.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>architettura</span> generale di (quasi) ogni sistema informatico esistente.&nbsp;
+            </p>
+
+
+
+            <p>Le idee alla base di questa macchina sono:&nbsp;<br>&ndash; un&nbsp;<strong>processore
+                    (CPU):&nbsp;</strong>esso esegue una sequenza di istruzioni (appartenenti ad un insieme
+                predefinito di istruzioni possibile) caricate in memoria dal programmatore, che elaborano dei dati,
+                anch&rsquo;essi caricati in memoria.</p>
+
+
+
+            <p>&ndash; la&nbsp;<strong>memoria</strong>&nbsp;del computer &egrave; unica e contiene quindi sia il
+                programma (con le istruzioni da eseguire) che i dati che esso utilizza: essa viene controllata dalla
+                CPU, che carica sia istruzioni che dati, li elabora secondo le istruzioni ricevute, e li salva nella
+                memoria. La memoria nei computer moderni corrisponde alla RAM, ma in ogni caso la RAM &egrave; una
+                specifica implementazione della memoria.</p>
+
+
+
+            <p>&ndash; l&rsquo;<strong>I/O</strong> (<strong>Input/Output</strong>) consente l&rsquo;accesso con
+                l&rsquo;esterno: &egrave; un <span class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Componente&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;Un componente di una applicazione &egrave; un elemento autonomo del software che svolge un compito definito. Esso comunica con gli altri componenti dell&amp;#039;applicazione e pu&ograve; far parte di un modulo. &amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>componente</span> che ha una memoria interna che memorizza i dati ricevuti
+                dall&rsquo;esterno e quelli da inviare e quindi comunica con le periferiche (tastiere, mouse,
+                monitor, memorie di massa, rete, ecc.).</p>
+
+
+
+            <p>&ndash; ogni <span class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Componente&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;Un componente di una applicazione &egrave; un elemento autonomo del software che svolge un compito definito. Esso comunica con gli altri componenti dell&amp;#039;applicazione e pu&ograve; far parte di un modulo. &amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>componente</span> comunica con gli altri mediante&nbsp;<strong>bus</strong>, linee
+                dati dedicate.</p>
+
+
+
+            <p>Questo modello &egrave; &egrave; stato esteso e oggi sono state realizzate architetture pi&ugrave;
+                complesse, ma sempre basate su questo modello.</p>
+
+
+
+            <p>Vediamo in dettaglio i singoli componenti.</p>
+
+
+
+            <h2 class="wp-block-heading"><strong>CPU</strong></h2>
+
+
+
+            <figure class="wp-block-image size-large"><img decoding="async" width="1024" height="578"
+                    src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-94-1024x578.png" alt=""
+                    class="wp-image-649"
+                    srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-94-1024x578.png 1024w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-94-300x169.png 300w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-94-768x433.png 768w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-94-1000x564.png 1000w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-94-230x130.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-94-350x197.png 350w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-94-480x271.png 480w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-94.png 1078w"
+                    sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+            <p>La&nbsp;<strong>CPU</strong>&nbsp;(Central Processing Unit) &egrave; composta dai seguenti
+                componenti:<br>&ndash; una&nbsp;<strong>ALU</strong>&nbsp;(Arithmenic Logic Unit), che svolge le
+                attivit&agrave; aritemiche e logiche (operazioni, confronti);</p>
+
+
+
+            <p>&ndash; una&nbsp;<strong>CU</strong>&nbsp;(Control Unit), che svolge le attivit&agrave; di gestione e
+                controllo;</p>
+
+
+
+            <p>&ndash; un registro&nbsp;<strong>IR</strong>, che memorizza l&rsquo;istruzione corrente;</p>
+
+
+
+            <p>&ndash; un registro&nbsp;<strong>PC,</strong>&nbsp;che memorizza la posizione della prossima
+                istruzione in memoria;</p>
+
+
+
+            <p>&ndash; un clock che temporizza le attivit&agrave; della CPU;</p>
+
+
+
+            <p>&ndash; un insieme di registri, che memorizzano gli operandi delle operazioni di calcolo, e gli
+                eventuali risultati.</p>
+
+
+
+            <p>La CPU opera mediante istruzioni semplici che svolgono operazioni elementari. Von Neumann prevede
+                istruzioni delle seguenti categorie:<br>&ndash;
+                operazioni&nbsp;<strong>aritmetiche</strong>&nbsp;(somma, prodotto, ecc.) e di confronto tra
+                operandi, eseguite dalla ALU:</p>
+
+
+
+            <p>&ndash; operazioni di&nbsp;<strong>controllo</strong>, ad esempio salti ad una istruzione specifica
+                (a seconda di una condizione o liberi), eseguiti dalla CU</p>
+
+
+
+            <p>&ndash; operazioni di&nbsp;<strong>caricamento</strong>&nbsp;di registri dalla memoria e viveversa,
+                eseguiti dalla CU</p>
+
+
+
+            <p>Come sappiamo ogni algoritmo pu&ograve; essere schematizzato in una combinazione di operazioni
+                di&nbsp;<strong>assegnazione</strong>, di&nbsp;<strong>calcolo</strong>, e
+                mediante&nbsp;<strong>condizioni</strong>&nbsp;e&nbsp;<strong>cicli&nbsp;</strong>che permettono di
+                ripetere il codice e prendere decisioni. Siccome la macchina di Von Neumann prevede tutte le
+                suddette operazioni, essa &egrave; un computer completo, e pu&ograve; realizzare qualsiasi
+                programma.&nbsp;</p>
+
+
+
+            <p>Le istruzioni sono codificate in&nbsp;<strong>linguaggio macchina</strong>, interpretato dalla CU,
+                che nella maggior parte dei computer sono codificate tramite codice binario.&nbsp;</p>
+
+
+
+            <h2 class="wp-block-heading">Come funziona la CPU?&nbsp;</h2>
+
+
+
+            <p>La sua attivit&agrave; &egrave; scandita da un clock, un <span class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Componente&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;Un componente di una applicazione &egrave; un elemento autonomo del software che svolge un compito definito. Esso comunica con gli altri componenti dell&amp;#039;applicazione e pu&ograve; far parte di un modulo. &amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>componente</span> che emette un segnale temporizzato che determina il ciclo di
+                esecuzione di una istruzione. Questo ciclo &egrave; diviso in 3 macro fasi:</p>
+
+
+
+            <figure class="wp-block-image size-full"><img decoding="async" width="360" height="336"
+                    src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-95.png" alt="" class="wp-image-650"
+                    srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-95.png 360w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-95-300x280.png 300w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-95-230x215.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-95-350x327.png 350w"
+                    sizes="(max-width: 360px) 100vw, 360px" /></figure>
+
+
+
+            <p>&ndash; nella fase di &ldquo;<strong>fetch</strong>&ldquo;, la CU legge il valore di PC e carica
+                dalla memoria l&rsquo;istruzione all&rsquo;indirizzo indicato da PC</p>
+
+
+
+            <p>&ndash; nella fase di &ldquo;<strong>decode</strong>&ldquo;, la CU decodifica l&rsquo;istruzione ed
+                individua quindi l&rsquo;operazione da eseguite e gli eventuali operandi (ad esempio se &egrave; una
+                somma (&ldquo;ADD&rdquo;) decodificher&agrave; anche gli operandi, che ad esempio potranno essere
+                registri o anche valori assoluti).&nbsp;</p>
+
+
+
+            <p>&ndash; nella fase di &ldquo;<strong>exec</strong>&rdquo; viene eseguita l&rsquo;istruzione, con
+                relativo salvataggio del dato se previsto, e viene aggiornato il PC all&rsquo;istruzione successiva.
+                Se l&rsquo;istruzione prevede un salto, viene memorizzato in PC l&rsquo;indirizzo
+                dell&rsquo;istruzione successiva.</p>
+
+
+
+            <p>Il ciclo ricomincia con l&rsquo;istruzione successiva, che viene ricaricata dall&rsquo;indirizzo
+                indicato da PC, e cos&igrave; via.&nbsp;</p>
+
+
+
+            <p>Le istruzioni hanno tutte pari tempo di esecuzione, un ciclo di clock.</p>
+
+
+
+            <p>Chiaramente operazioni relativamente semplici in un linguaggio ad alto livello possono richiedere
+                molte istruzioni in linguaggio macchina. I cicli di clock, a seconda dell&rsquo;<span
+                    class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Architettura&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;L&amp;#039;architettura di un sistema informatico indica il modo in cui &egrave; organizzato il software, di quali componenti e moduli &egrave; composto, che ruolo hanno e in che modo comunicano.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>architettura</span> e della <span class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Tecnologia&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;Disciplina che studia e ricerca a livello generale sia la progettazione di manufatti, sia le strategie per realizzarli. Indica inoltre le scienze applicate ai processi di trasformazione e realizzazione di prodotti. Essa &egrave; una generalizzazione della tecnica. &amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&amp;lt;!-- wp:paragraph --&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>tecnologia</span> utilizzata possono variare dalle poche centinaia al secondo dei
+                primi computer (ENIAC) ai miliardi di operazioni al secondo dei computer moderni, aumentando
+                cos&igrave; la velocit&agrave; dei computer.</p>
+
+
+
+            <p>Negli ultimi decenni si sono evolute architetture di cpu moderne che prevedono istruzioni che sono in
+                grado di svolgere anche operazioni relativamente complesse, le pi&ugrave; conosciute sono CISC
+                (x86-x64) e RISC (ARM).&nbsp;</p>
+
+
+
+            <p>Il funzionamento del codice macchina verr&agrave; approfondito in apposita lezione.</p>
+
+
+
+            <h2 class="wp-block-heading"><strong>Memoria</strong></h2>
+
+
+
+            <figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="408" height="596"
+                    src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-96.png" alt="" class="wp-image-651"
+                    srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-96.png 408w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-96-205x300.png 205w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-96-230x336.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-96-350x511.png 350w"
+                    sizes="auto, (max-width: 408px) 100vw, 408px" /></figure>
+
+
+
+            <p>Nella macchina di Von Neumann, la memoria &egrave; organizzata come un
+                grosso&nbsp;<strong>vettore</strong><a
+                    href="applewebdata://8083FE0F-C6D0-418A-8367-1C39B52B953F#_ftn1"><sup>[1]</sup></a>, ovvero una
+                sequenza di celle ciascuna con un indirizzo assoluto (da 0 alla memoria massima allocabile). La
+                memoria massima logica di un programma &egrave; in genere data dalla sua <span class="glossaryLink"
+                    aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Architettura&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;L&amp;#039;architettura di un sistema informatico indica il modo in cui &egrave; organizzato il software, di quali componenti e moduli &egrave; composto, che ruolo hanno e in che modo comunicano.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>architettura</span>: i primi computer potevano avere pochi K di memoria, quelli
+                moderni arrivano a decine di GB.</p>
+
+
+
+            <p><strong>La memoria &egrave; unica e</strong>&nbsp;<strong>contiene sia le istruzioni che i
+                    dati</strong>, cio&egrave; le variabili, le strutture dati, i dati di input/ouput ed ogni dato
+                di elaborazione del programma&nbsp;</p>
+
+
+
+            <p>In molte implementazioni il&nbsp;<strong>codice</strong>&nbsp;viene memorizzato nella parte bassa
+                della memoria, e ci&ograve; avviene al caricamento del programma in memoria (da parte del sistema
+                operativo).</p>
+
+
+
+            <p>Il programma in esecuzione ha pieno accesso alla memoria, e quindi pu&ograve; leggere e scrivere in
+                qualsiasi locazione di memoria, conoscendone il solo indirizzo, cio&egrave; la posizione in memoria.
+                I programmi scritti in linguaggio ad alto livello hanno comunque meccanismi di protezione della
+                memoria, ma quando vengono eseguiti forniscono al programmatore direttamente l&rsquo;accesso a
+                variabili e tipi di dato (numeri, stringhe, ecc.).&nbsp;</p>
+
+
+
+            <p>Internamente per&ograve; queste variabili vengono memorizzate nell&rsquo;area di memoria
+                immediatamente &ldquo;sopra&rdquo; al codice, che viene chiamata &ldquo;<strong>heap</strong>&rdquo;
+                (cumulo).&nbsp;</p>
+
+
+
+            <p>La memoria &ldquo;in alto&rdquo; invece viene utilizzata per memorizzare le chiamate
+                ai&nbsp;<strong>sottoprogrammi</strong>&nbsp;(detti anche subroutine). I sottoprogrammi sono parti
+                di un programma che possono essere eseguite in parti diverse del programma (svolgono compiti di
+                utilit&agrave; e semplificano lo sviluppo di software, evitando di ripetere di scrivere lo stesso
+                codice). Le chiamate ai sottoprogrammi richiedono di memorizzare l&rsquo;indirizzo di ritorno della
+                chiamata, i parametri o argomenti che questi possono ricevere, ed eventuali valori di ritorno.
+                Quest&rsquo;area di memoria viene chiamata &ldquo;stack&rdquo; (pila) e verr&agrave; approfondita in
+                apposita lezione.&nbsp;<strong></strong></p>
+
+
+
+            <h2 class="wp-block-heading"><strong>BUS e I/O</strong></h2>
+
+
+
+            <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="483"
+                    src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-98-1024x483.png" alt=""
+                    class="wp-image-653"
+                    srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-98-1024x483.png 1024w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-98-300x141.png 300w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-98-768x362.png 768w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-98-1000x471.png 1000w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-98-230x108.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-98-350x165.png 350w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-98-480x226.png 480w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-98.png 1078w"
+                    sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+            <p>Nella macchina di Von Neumann riveste importanza l&rsquo;<span class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Architettura&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;L&amp;#039;architettura di un sistema informatico indica il modo in cui &egrave; organizzato il software, di quali componenti e moduli &egrave; composto, che ruolo hanno e in che modo comunicano.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>architettura</span> del bus, che prevede sempre almeno due linee dedicate:</p>
+
+
+
+            <p>&ndash; una per i dati, dove transita il contenuto da una sorgente ad una destinazione;</p>
+
+
+
+            <p>&ndash; una per gli indirizzi e le informazioni di controllo (possono anche essere due bus dedicati),
+                che serve per determinare la destinazione e l&rsquo;indirizzo dove riporre i dati.</p>
+
+
+
+            <p>Quindi la cpu quando scrive in memoria prima invia un comando ed un indirizzo via bus indirizzi, e
+                poi trasferisce l&rsquo;informazione tramite bus dati. La stessa identica cosa succede nella
+                comunicazione dell&rsquo;i/o con la memoria. Di fatto per semplicit&agrave; la CPU comunica con la
+                memoria e la memoria con l&rsquo;input/output.&nbsp;</p>
+
+
+
+            <p>L&rsquo;input/output consiste in un <span class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Componente&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;Un componente di una applicazione &egrave; un elemento autonomo del software che svolge un compito definito. Esso comunica con gli altri componenti dell&amp;#039;applicazione e pu&ograve; far parte di un modulo. &amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>componente</span> collegato da una parte al bus per trasferire informazioni.</p>
+
+
+
+            <p>Dal punto di vista interno, l&rsquo;i/o ha un comportamento simile alla memoria, ha cio&egrave; degli
+                indirizzi o gruppi di indirizzi a cui sono associati delle periferiche. Quando avviene un evento di
+                input, l&rsquo;i/o &egrave; progettato in modo tale da scrivere nei propri indirizzi il flusso di
+                dati (ad esempio input da tastiera, movimento del mouse, dati dalla rete, ecc.) a partire dalla
+                fonte digitale da cui essi provengono. Viceversa quandon viene generato un evento di output,
+                l&rsquo;i/o legge dagli indirizzi ed invia digitalmente il dato alla periferica associata
+                all&rsquo;indirizzo.&nbsp;</p>
+
+
+
         </div>
         <div id="page2" class="page">
-            <div class="row">
-                <h2>Pagina 2</h2>
-                <a href="#home">Home</a>
-            </div>
+            <a href="#home">Home</a>
+            <h1 class="eckb-article-title">Linguaggi compilatori ed interpreti</h1>
+            <p>L&rsquo;<span class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Architettura&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;L&amp;#039;architettura di un sistema informatico indica il modo in cui &egrave; organizzato il software, di quali componenti e moduli &egrave; composto, che ruolo hanno e in che modo comunicano.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>architettura</span> di Von Neumann &egrave; un modello semplificato che descrive
+                l&rsquo;<span class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Architettura&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;L&amp;#039;architettura di un sistema informatico indica il modo in cui &egrave; organizzato il software, di quali componenti e moduli &egrave; composto, che ruolo hanno e in che modo comunicano.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>architettura</span> di un sistema che comprende una CPU ed una memoria centrale,
+                oltre ad un <span class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Componente&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;Un componente di una applicazione &egrave; un elemento autonomo del software che svolge un compito definito. Esso comunica con gli altri componenti dell&amp;#039;applicazione e pu&ograve; far parte di un modulo. &amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>componente</span> di I/O.&nbsp;</p>
+
+
+
+            <p>Nei sistemi moderni si sono tuttavia evoluti, a partire dagli anni 80, alcune importanti innovazioni:
+            </p>
+
+
+
+            <p>&ndash; i processori multi stadio, ovvero con una&nbsp;<strong>pipeline</strong>;</p>
+
+
+
+            <p>&ndash; i processori&nbsp;<strong>multi core</strong>, ovvero con pi&ugrave; core;</p>
+
+
+
+            <p>&ndash; le cache&nbsp;<strong>multi livello</strong>.</p>
+
+
+
+            <p>Descriviamo queste innovazioni.</p>
+
+
+
+            <p>La&nbsp;<strong>pipeline</strong>&nbsp;consiste nell&rsquo;esecuzione, nella cpu, di pi&ugrave;
+                istruzioni in contemporanea tramite la suddivisione della cpu in sezioni, dette stadi, dove viene
+                eseguita una specifica fase del ciclo di clock. Il processore esegue cio&egrave; la fetch della
+                prima istruzione di codice, poi quando passa alla decode, comincia la fetch della seconda
+                istruzione, quando la prima istruzione va in esecuzione, si esegue la decode della seconda, e quindi
+                la fetch della terza.&nbsp;</p>
+
+
+
+            <p>Non solo ma anche&nbsp;<strong>l&rsquo;esecuzione viene divisa in stadi</strong>: ad esempio
+                nell&rsquo;istruzione si pu&ograve; per esempio suddividere l&rsquo;istruzione in pi&ugrave; fasi,
+                come ad esempio il caricamento degli operatori, l&rsquo;eventuale operazione aritmetico-logica, la
+                scrittura dei registri, la scrittura della memoria, e quindi tenere attive pi&ugrave; esecuzioni di
+                istruzioni successive in contemporanea.&nbsp;</p>
+
+
+
+            <p>Questo meccanismo non funziona quando una istruzione blocca la successiva (ad esempio perch&egrave;
+                bisogna fare un calcolo) oppure si opera un salto. In questi casi l&rsquo;istruzione successiva
+                viene annullata e si perde tutta la pipeline successiva. Poich&eacute; per&ograve; la percentuale
+                delle istruzioni bloccanti in generale &egrave; inferiore al 30%, nei processori con pipeline si
+                ottiene a parit&agrave; di clock un incremento di prestazioni notevole, sfruttando il fatto che in
+                ogni istante si tende a usare ogni <span class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Componente&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;Un componente di una applicazione &egrave; un elemento autonomo del software che svolge un compito definito. Esso comunica con gli altri componenti dell&amp;#039;applicazione e pu&ograve; far parte di un modulo. &amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>componente</span> della cpu.&nbsp;</p>
+
+
+
+            <figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="546" height="296"
+                    src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-99.png" alt="" class="wp-image-656"
+                    srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-99.png 546w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-99-300x163.png 300w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-99-230x125.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-99-350x190.png 350w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-99-480x260.png 480w"
+                    sizes="(max-width: 546px) 100vw, 546px" /></figure>
+
+
+
+            <figure class="wp-block-image size-full"><img decoding="async" width="510" height="274"
+                    src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-100.png" alt="" class="wp-image-657"
+                    srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-100.png 510w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-100-300x161.png 300w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-100-230x124.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-100-350x188.png 350w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-100-480x258.png 480w"
+                    sizes="(max-width: 510px) 100vw, 510px" /></figure>
+
+
+
+            <p>Il processore&nbsp;<strong>multi-core</strong>&nbsp;invece consiste nella replicazione della cpu,
+                garantendo quindi l&rsquo;esecuzione di pi&ugrave; istruzioni in contemporanea, con la replicazione
+                di tutti i registri, della CU e della ALU. Il sistema operativo quindi ha a disposizione pi&ugrave;
+                cpu a cui assegnare le risorse, con l&rsquo;ovvio vantaggio che &egrave; possibile eseguire
+                pi&ugrave; applicazioni in contemporanea. Questa funzione &egrave; alla base della programmazione
+                concorrente.&nbsp;</p>
+
+
+
+            <figure class="wp-block-image size-full"><img decoding="async" width="434" height="244"
+                    src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-101.png" alt="" class="wp-image-658"
+                    srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-101.png 434w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-101-300x169.png 300w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-101-230x129.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-101-350x197.png 350w"
+                    sizes="(max-width: 434px) 100vw, 434px" /></figure>
+
+
+
+            <p>La&nbsp;<strong>cache</strong>&nbsp;&egrave; un meccanismo, gestito a livello hardware, per cui il
+                processore non comunica direttamente con la memoria, ma con una cache del processore, che ha una
+                velocit&agrave; simile a quella della cpu e superiore a quella della ram, che conserva i dati di
+                memoria pi&ugrave; utilizzati, e ne permette il ricaricamento rapido da parte del processore nella
+                fase di caricamento.&nbsp;</p>
+
+
+
+            <figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="602" height="184"
+                    src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-102.png" alt="" class="wp-image-659"
+                    srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-102.png 602w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-102-300x92.png 300w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-102-230x70.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-102-350x107.png 350w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-102-480x147.png 480w"
+                    sizes="auto, (max-width: 602px) 100vw, 602px" /></figure>
+
+
+
+            <h2 class="wp-block-heading"><strong>RISC e CISC</strong></h2>
+
+
+
+            <p>Nel corso degli anni 70 si sono evolute due famiglie distinte di processori: i
+                processori&nbsp;<strong>CISC e RISC.</strong>&nbsp;I primi hanno avuto come base una strategia
+                basata su istruzioni macchina pi&ugrave; complesse, i secondi su istruzioni pi&ugrave; semplici ed
+                un maggior numero di registri. Oggi queste due architetture fanno riferimento in particolare,
+                rispettivamente alle tecnologie Intel e ARM.</p>
+
+
+
+            <p>Vediamo le differenze in questa tabella:</p>
+
+
+
+            <figure class="wp-block-table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><strong>RISC</strong></td>
+                            <td><strong>CISC</strong></td>
+                        </tr>
+                        <tr>
+                            <td>ISA (Instruction Set Architecture)</td>
+                            <td>ridotto</td>
+                            <td>ampio</td>
+                        </tr>
+                        <tr>
+                            <td>Ortogonalit&agrave;</td>
+                            <td>ampia</td>
+                            <td>ridotta</td>
+                        </tr>
+                        <tr>
+                            <td>Numero registri</td>
+                            <td>molti</td>
+                            <td>pochi</td>
+                        </tr>
+                        <tr>
+                            <td>Cicli per istruzione</td>
+                            <td>1</td>
+                            <td>pi&ugrave; di 1&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>CU</td>
+                            <td>cablata</td>
+                            <td>microprogrammata</td>
+                        </tr>
+                        <tr>
+                            <td>ALU</td>
+                            <td>solo su registri</td>
+                            <td>anche su memoria</td>
+                        </tr>
+                        <tr>
+                            <td>applicazioni</td>
+                            <td>calcolo</td>
+                            <td>multipurpose</td>
+                        </tr>
+                        <tr>
+                            <td>pipeline</td>
+                            <td>si</td>
+                            <td>parziale</td>
+                        </tr>
+                        <tr>
+                            <td>dimensioni codice</td>
+                            <td>grande</td>
+                            <td>piccolo</td>
+                        </tr>
+                        <tr>
+                            <td>esempi</td>
+                            <td>ARM, GPU</td>
+                            <td>PC</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </figure>
+
+
+
+            <p>Alcune definizioni:</p>
+
+
+
+            <p>&ndash; ISA: set di istruzioni Assembly</p>
+
+
+
+            <p>&ndash; Ortogonalit&agrave;: capacit&agrave; di una istruzione di accettare parametri di tipo
+                differente (registri, indirizzi e valori assoluti)</p>
+
+
+
+            <p>&ndash; CU cablata e microprogrammata: nella prima la decodifica delle istruzioni &egrave; integrata
+                nell&rsquo;hardware fisico della macchina. Nell&rsquo;<span class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Architettura&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;L&amp;#039;architettura di un sistema informatico indica il modo in cui &egrave; organizzato il software, di quali componenti e moduli &egrave; composto, che ruolo hanno e in che modo comunicano.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>architettura</span> microprogrammata &egrave; invece possibile programmare (tramite
+                codici) in modo da modificare il set di istruzioni base.<br>&ndash; GPU: cpu delle schede grafiche.
+            </p>
+
+
+
+            <h2 class="wp-block-heading"><strong>Linguaggi ad alto livello</strong></h2>
+
+
+
+            <p>l linguaggio Assembly &egrave; un linguaggio a basso livello.&nbsp;<strong>Esso dipende
+                    dall&rsquo;<span class="glossaryLink" aria-describedby="tt"
+                        data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Architettura&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;L&amp;#039;architettura di un sistema informatico indica il modo in cui &egrave; organizzato il software, di quali componenti e moduli &egrave; composto, che ruolo hanno e in che modo comunicano.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                        data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                        role='link'>architettura</span> hardware</strong>&nbsp;della macchina, ed anche
+                quando contiene istruzioni complesse (nei processori CISC) essere restano assai specifiche per
+                alcune tipologie di dati (es. stringhe o vettori). In particolare, resta complesso gestire un ciclo,
+                eseguire procedure, fare calcoli con pi&ugrave; operandi, gestire molte variabili. Il programmatore
+                deve tenere infatti conto di avere una memoria limitata, di dover fare le conversioni di tipo e di
+                memorizzare sempre nello stack le informazioni. Nei programmi di maggiore complessit&agrave; diventa
+                estremamente oneroso sviluppare e quindi si rende necessario semplificare.&nbsp;</p>
+
+
+
+            <p>Per questo fin dagli albori dell&rsquo;informatica sono stati progettati linguaggi cosiddetti
+                &ldquo;ad alto livello&rdquo; con lo scopo di dare al programmatore una serie di strumenti di
+                programmazione pi&ugrave; vicini al suo modo di pensare e di nascondere i dettagli, come lo stack, i
+                registri, le limitazioni di calcolo, ecc. In pratica un programma scritto con un linguaggio ad alto
+                livello introduce un insieme di astrazioni pi&ugrave; vicine al modo di pensare di un essere umano:
+            </p>
+
+
+
+            <p>&ndash; istruzioni condizionali;</p>
+
+
+
+            <p>&ndash; istruzioni di ciclo;</p>
+
+
+
+            <p>&ndash; tipizzazione delle variabili;</p>
+
+
+
+            <p>&ndash; strutture dati complesse.</p>
+
+
+
+            <p>Come viene tradotto un linguaggio ad alto livello in codice macchina?</p>
+
+
+
+            <p>Tramite un programma che automaticamente esegua la traduzione, ed in modo trasparente per il
+                programmatore, che quindi non deve essere tenuto a conoscere le istruzioni macchina.</p>
+
+
+
+            <p>Sono previste due tecniche:
+                la&nbsp;<strong>compilazione</strong>&nbsp;e&nbsp;<strong>l&rsquo;interpretazione</strong>.</p>
+
+
+
+            <h2 class="wp-block-heading"><strong>Compilazione</strong></h2>
+
+
+
+            <p>La&nbsp;<strong>compilazione</strong>&nbsp;consiste nel tradurre, in una sola macrooperazione, il
+                codice ad alto livello direttamente in codice macchina. Le istruzioni vengono analizzate e per ogni
+                gruppo viene creato il corrispondente codice macchina, i simboli e le variabili vengono memorizzati
+                in memoria. La compilazione viene effettuata una volta soltanto e questa produce un file
+                detto&nbsp;<strong>oggetto</strong>, che contiene il codice pronto ad essere eseguito.&nbsp;</p>
+
+
+
+            <p>Il software che esegue la compilazione, il compilatore, assume un ruolo fondamentale nella
+                qualit&agrave; del codice prodotto. Il compilatore deve essere specifico per l&rsquo;<span
+                    class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Architettura&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;L&amp;#039;architettura di un sistema informatico indica il modo in cui &egrave; organizzato il software, di quali componenti e moduli &egrave; composto, che ruolo hanno e in che modo comunicano.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>architettura</span> dove verr&agrave; eseguito il codice: quindi per ogni <span
+                    class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Architettura&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;L&amp;#039;architettura di un sistema informatico indica il modo in cui &egrave; organizzato il software, di quali componenti e moduli &egrave; composto, che ruolo hanno e in che modo comunicano.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>architettura</span> &egrave; previsto uno specifico compilatore.&nbsp;</p>
+
+
+
+            <p>In genere, comunque, quando si scrive una applicazione, si fa uso anche di codice gi&agrave; pronto
+                per svolgere operazioni pronte, ad esempio per svolgere calcoli, scrivere su disco, ecc. Questo
+                codice non &egrave; parte dell&rsquo;applicazione che scrive il programmatore, ma &egrave; parte di
+                una o pi&ugrave;&nbsp;<strong>librerie</strong>&nbsp;esterne, generalmente gi&agrave; compilate e
+                pronte per essere inserite nel programma finale.</p>
+
+
+
+            <p>Pertanto, alla fine della compilazione, file oggetto e librerie vengono collegati tra loro. Questa
+                operazione viene chiamata&nbsp;<strong>linking</strong>. Il risultato del linking viene
+                chiamato&nbsp;<strong>build</strong>, ed assume la forma di una applicazione eseguibile, oppure un
+                file da eseguire su un server, o una cartella che contiene tutto il codice pronto.&nbsp;</p>
+
+
+
+            <figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="660" height="212"
+                    src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-103.png" alt="" class="wp-image-660"
+                    srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-103.png 660w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-103-300x96.png 300w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-103-230x74.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-103-350x112.png 350w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-103-480x154.png 480w"
+                    sizes="auto, (max-width: 660px) 100vw, 660px" /></figure>
+
+
+
+            <p>Una applicazione compilata, cio&egrave; una build, &egrave; una applicazione scritta in linguaggio
+                macchina. Ma &egrave; una applicazione realizzata da un sistema automatico, che usa quindi algoritmi
+                che cercano di creare un codice che tiene conto anche delle specificit&agrave; del linguaggio di
+                programmazione e delle caratteristiche della cpu verso cui si compila. Questo rende il codice
+                compilato pi&ugrave; o meno efficiente anche in base al linguaggio di programmazione e le tecniche
+                di programmazione adottate dal programmatore. Le prestazioni potrebbero essere quindi inferiori
+                rispetto a quelle di un programma esplicitamente progettato in Assembly. Questa &egrave; la ragione
+                per cui per alcune attivit&agrave; critiche dove sono necessarie prestazioni (e nessun errore) si
+                usa ancora l&rsquo;Assembly per progettare e realizzare il software.<strong></strong></p>
+
+
+
+            <h2 class="wp-block-heading"><strong>Interpretazione</strong></h2>
+
+
+
+            <p>L&rsquo;interpretazione consiste nell&rsquo;azione di tradurre ed eseguire le singole istruzioni del
+                linguaggio ad alto livello. Ogni singola riga di codice viene analizzata ed eseguita
+                all&rsquo;interno di un contesto di esecuzione che memorizza le variabili, i cicli in corso, le
+                chiamate di funzione, ecc. Il software che si occupa dell&rsquo;esecuzione del programma (e quindi
+                della creazione del contesto di esecuzione) si chiama runtime, e l&rsquo;interprete &egrave; quella
+                parte del runtime che appunto interpreta ed esegue le istruzioni. Il linguaggio ad alto livello
+                interpretato viene in genere chiamato linguaggio di scripting.</p>
+
+
+
+            <p>L&rsquo;esecuzione del codice di scripting avviene ad ogni singola esecuzione. L&rsquo;esecuzione di
+                codice interpretato ha il grande vantaggio di non dover scrivere un compilatore. Questo significa
+                per&ograve; prestazioni inferiori, perch&egrave; non viene pi&ugrave; eseguito codice macchina, ma
+                codice ad alto livello.</p>
+
+
+
+            <figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="564" height="228"
+                    src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-104.png" alt="" class="wp-image-661"
+                    srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-104.png 564w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-104-300x121.png 300w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-104-230x93.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-104-350x141.png 350w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-104-480x194.png 480w"
+                    sizes="auto, (max-width: 564px) 100vw, 564px" /></figure>
+
+
+
+            <p>Tenuto conto dei pro e dei conto delle due tecniche, negli ultimi decenni queste due tecniche sono
+                state sviluppate due tecniche ibride di grande diffusione: la VM e la compilazione JIT.</p>
+
+
+
+            <h2 class="wp-block-heading"><strong>La Virtual Machine e la compilazione JIT</strong></h2>
+
+
+
+            <p>Alcuni linguaggi (Java e i linguaggi .NET) hanno introdotto un meccanismo basato su un doppio
+                passaggio.</p>
+
+
+
+            <p>In questi linguaggi il codice originale viene compilato tradizionalmente, ma il codice oggetto (e la
+                build) non sono nel codice macchina del computer in cui sono stati compilati. Questo codice macchina
+                (nel mondo Java si chiama&nbsp;<strong>bytecode</strong>, nel mondo .NET si
+                chiama&nbsp;<strong>IL</strong>), &egrave; di una macchina speciale con una <span class="glossaryLink"
+                    aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Architettura&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;L&amp;#039;architettura di un sistema informatico indica il modo in cui &egrave; organizzato il software, di quali componenti e moduli &egrave; composto, che ruolo hanno e in che modo comunicano.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>architettura</span> predeterminata dai creatori del linguaggio. Questo codice per
+                essere eseguito ha bisogno quindi di un runtime, che &egrave; un software che emula quella <span
+                    class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Architettura&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;L&amp;#039;architettura di un sistema informatico indica il modo in cui &egrave; organizzato il software, di quali componenti e moduli &egrave; composto, che ruolo hanno e in che modo comunicano.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>architettura</span>: si tratta rispettivamente della JVM (Java Virtual Machine per
+                Java), e del CLR (Common Language Runtime per .NET).</p>
+
+
+
+            <p>L&rsquo;obiettivo &egrave; la portabilit&agrave;: anzich&egrave; realizzare un compilatore specifico
+                per ogni <span class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Architettura&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;L&amp;#039;architettura di un sistema informatico indica il modo in cui &egrave; organizzato il software, di quali componenti e moduli &egrave; composto, che ruolo hanno e in che modo comunicano.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>architettura</span>, viene realizzato un compilatore generale e poi una macchina
+                virtuale specifica, di pi&ugrave; semplice realizzazione e compilazione. Nelle prime versioni della
+                JVM (e del .NET framework) il codice macchina veniva quindi interpretato e si comportava quindi a
+                tutti gli effetti come un linguaggio di scripting, con ovvie conseguenze sulle prestazioni, che
+                erano deludenti e confinavano Java (e .NET) solo a specifiche applicazioni non &ldquo;time
+                critical&rdquo;.&nbsp;</p>
+
+
+
+            <p>Nell&rsquo;ultimo decennio tutte le JVM e i CLR si sono quindi evolute, ed hanno implementato una
+                compilazione dell&rsquo;applicazione da codice macchina virtuale a codice macchina reale.
+                L&rsquo;applicazione diventa quindi a tutti gli effetti una build con codice macchina nativo
+                dell&rsquo;<span class="glossaryLink" aria-describedby="tt"
+                    data-cmtooltip="&lt;div class=glossaryItemTitle&gt;Architettura&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;L&amp;#039;architettura di un sistema informatico indica il modo in cui &egrave; organizzato il software, di quali componenti e moduli &egrave; composto, che ruolo hanno e in che modo comunicano.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"
+                    data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]' tabindex='0'
+                    role='link'>architettura</span> di esecuzione. Questa tecnica si chiama compilazione JIT
+                (&ldquo;Just in time&rdquo;) e cerca di unire i vantaggi della portabilit&agrave; a quelli delle
+                prestazioni.&nbsp;</p>
+
+
+
+            <p>La compilazione JIT &egrave; oggi utilizzata su una vastit&agrave; di linguaggi interpretati, ad
+                esempio Javascript, e verr&agrave; introdotta anche in linguaggi di scripting come PHP.</p>
+
+
+
+            <p><strong>Quadro riassuntivo dei principali linguaggi ad alto livello.</strong></p>
+            <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="686"
+                    src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-105-1024x686.png" alt=""
+                    class="wp-image-662"
+                    srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-105-1024x686.png 1024w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-105-300x201.png 300w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-105-768x514.png 768w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-105-1000x670.png 1000w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-105-230x154.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-105-350x234.png 350w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-105-480x321.png 480w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-105.png 1078w"
+                    sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
         </div>
         <div id="page3" class="page">
-            <div class="row">
-                <h2>Pagina 3</h2>
-                <a href="#home">Home</a>
-            </div>
+            <a href="#home">Home</a>
+            <h1 class="eckb-article-title">Sistemi di numerazione</h1>
+            <p>Il sistema che usiamo &egrave; detto anche decimale perch&eacute; le cifre sono 10, e vanno da 0 a 9:
+                la posizione della cifra indica il suo valore in multipli di 10 in base alla sua posizione.</p>
+
+
+
+            <p>Ad esempio il numero 36143 si rappresenta indicando la posizione delle cifre:</p>
+
+
+
+            <figure class="wp-block-table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Base</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td><strong>6</strong></td>
+                            <td><strong>1</strong></td>
+                            <td><strong>4</strong></td>
+                            <td><strong>3</strong></td>
+                            <td><strong>10</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </figure>
+
+
+
+            <p><strong>=
+                    3</strong>*10<sup>4</sup>&nbsp;+&nbsp;<strong>6</strong>*10<sup>3</sup>&nbsp;+&nbsp;<strong>1</strong>*10<sup>2</sup>&nbsp;+&nbsp;<strong>4</strong>*10<sup>1</sup>&nbsp;+&nbsp;<strong>3</strong>*10<sup>0</sup>=<strong>36143</strong><sub>10</sub>
+            </p>
+
+
+
+            <p>Il numero in questa forma &egrave; detto espresso
+                in&nbsp;<strong>forma</strong>&nbsp;<strong>polinomiale</strong>.</p>
+
+
+
+            <p><strong>Il sistema decimale non &egrave; l&rsquo;unico possibile.&nbsp;</strong></p>
+
+
+
+            <p>Ad esempio &egrave; possibile utilizzare 5 cifre (da 0 a 4) per rappresentare un numero. Questo
+                sistema &egrave; detto sistema&nbsp;<strong>quinario</strong>. In questo sistema 5 diventa 10, 25
+                diventa 100, 125 diventa 1000 e via andare. Le cifre seguono quindi la stessa regola:</p>
+
+
+
+            <figure class="wp-block-table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Base</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td><strong>0</strong></td>
+                            <td><strong>2</strong></td>
+                            <td><strong>3</strong></td>
+                            <td><strong>1</strong></td>
+                            <td><strong>5</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </figure>
+
+
+
+            <p><strong>=
+                    3</strong>*5<sup>4</sup>&nbsp;+&nbsp;<strong>6</strong>*5<sup>3</sup>&nbsp;+&nbsp;<strong>1</strong>*5<sup>2</sup>&nbsp;+&nbsp;<strong>4</strong>*5<sup>1</sup>&nbsp;+&nbsp;<strong>3</strong>*5<sup>0&nbsp;</sup>=&nbsp;<strong>2673</strong><sub>10</sub>
+            </p>
+
+
+
+            <p>Allo stesso modo possiamo usare sistemi in qualsiasi base.</p>
+
+
+
+            <p>La base pu&ograve; anche essere superiore a 10. Ad esempio nel
+                sistema&nbsp;<strong>esadecimale</strong>&nbsp;si usano i simboli 0..9 e poi si usano le lettere
+                A,B,C,D,E,F dove A=10, B=11, e cos&igrave; via fino a F=15.</p>
+
+
+
+            <p>Ad esempio:</p>
+
+
+
+            <figure class="wp-block-table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Base</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td><strong>C</strong></td>
+                            <td><strong>A</strong></td>
+                            <td><strong>3</strong></td>
+                            <td><strong>0</strong></td>
+                            <td><strong>16</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </figure>
+
+
+
+            <p><strong>=
+                    4</strong>*16<sup>4</sup>&nbsp;+&nbsp;<strong>C</strong>*16<sup>3</sup>&nbsp;+&nbsp;<strong>A</strong>*16<sup>2</sup>&nbsp;+&nbsp;<strong>3</strong>*16<sup>1</sup>&nbsp;+&nbsp;<strong>0</strong>*16<sup>0&nbsp;</sup>=&nbsp;<strong>313904</strong><sub>10</sub>
+            </p>
+
+
+
+            <p>La definizione generale &egrave; la seguente:&nbsp;</p>
+
+
+
+            <p><strong>dato un numero<em>&nbsp;x</em>&nbsp;in una base&nbsp;<em>b</em>, esso &egrave; composto da un
+                    gruppo di cifre&nbsp;<em>c<sub>0</sub>&hellip;c<sub>n-1</sub></em>&nbsp;che possono assumere un
+                    valore da&nbsp;<em>0&nbsp;</em>a&nbsp;<em>b-1</em>. Esso &egrave; convertibile in base 10 con la
+                    seguente espressione polinomiale:<br></strong></p>
+
+
+
+            <p><strong>c<sub>0</sub>*b<sup>n-1</sup>+ c<sub>1</sub>*b<sup>n-2</sup>+&hellip;+
+                    c<sub>n-1</sub>*b<sup>0</sup>&nbsp;= n<sub>10</sub></strong></p>
+
+
+
+            <p>Gli esempi sopra indicati rispettano tutti questa regola.</p>
+
+
+
+            <h2 class="wp-block-heading"><strong>Sistema binario</strong></h2>
+
+
+
+            <p>In ambito informatico &egrave; particolarmente importante il
+                sistema&nbsp;<strong>binario</strong>&nbsp;per memorizzare i numeri, in quanto &egrave; molto
+                conveniente creare circuiti elettronici che memorizzano due valori possibili (che corrispondono a 0
+                e 1).</p>
+
+
+
+            <p>Un numero binario si rappresenta con la definizione generale vista sopra.</p>
+
+
+
+            <p>Quindi per esempio col numero 10011 in base 2 avremo:</p>
+
+
+
+            <figure class="wp-block-table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Base</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td><strong>0</strong></td>
+                            <td><strong>0</strong></td>
+                            <td><strong>1</strong></td>
+                            <td><strong>1</strong></td>
+                            <td><strong>2</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </figure>
+
+
+
+            <p><strong>=
+                    1</strong>*2<sup>4</sup>&nbsp;+&nbsp;<strong>0</strong>*2<sup>3</sup>&nbsp;+&nbsp;<strong>0</strong>*2<sup>2</sup>&nbsp;+&nbsp;<strong>1</strong>*2<sup>1</sup>&nbsp;+&nbsp;<strong>1</strong>*2<sup>0&nbsp;</sup>=&nbsp;<strong>19</strong><sub>10</sub>
+            </p>
+
+
+
+            <p>Proviamo per&ograve; a fare la conversione opposta, cio&egrave; da&nbsp;<strong>decimale a
+                    binario</strong>.</p>
+
+
+
+            <p>L&rsquo;algoritmo per convertire da decimale a binario un numero n &egrave; il seguente:</p>
+
+
+
+            <ol class="wp-block-list">
+                <li><strong>Si trova la potenza di 2 pi&ugrave; grande</strong>&nbsp;tra quelle inferiori al numero
+                    n binario da convertire, che chiamiamo b. A questo punto comincia il ciclo:</li>
+
+
+
+                <li><strong>Si divide n per b</strong>, il&nbsp;<strong>quoziente</strong>&nbsp;(che pu&ograve;
+                    essere 0 o 1)&nbsp;<strong>&egrave; una cifra</strong>&nbsp;del numero binario;</li>
+
+
+
+                <li><strong>Si prende il resto</strong>&nbsp;e si&nbsp;<strong>ripete</strong>&nbsp;il punto 2;</li>
+
+
+
+                <li><strong>Si esce quando il resto vale 0</strong>.</li>
+            </ol>
+
+
+
+            <p>Proviamo un esempio con n=365, che ha come potenza massima inferiore a n=256</p>
+
+
+
+            <figure class="wp-block-table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><strong>step</strong></td>
+                            <td><strong>resto</strong></td>
+                            <td><strong>potenza di 2</strong></td>
+                            <td><strong>quoziente</strong></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>365</td>
+                            <td>256</td>
+                            <td><strong>1</strong></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>109</td>
+                            <td>128</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>109</td>
+                            <td>64</td>
+                            <td><strong>1</strong></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>45</td>
+                            <td>32</td>
+                            <td><strong>1</strong></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>13</td>
+                            <td>16</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>13</td>
+                            <td>8</td>
+                            <td><strong>1</strong></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>5</td>
+                            <td>4</td>
+                            <td><strong>1</strong></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td><strong>1</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </figure>
         </div>
     </div>
 
     <script src="index.js" type="module"></script>
 </body>
+
 </html>
