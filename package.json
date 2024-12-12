@@ -1,0 +1,21 @@
+{
+  "name": "5c_cecire_esempio_spa",
+  "version": "1.0.0",
+  "description": "Esempio SPA.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/Fix-22/5C_Cecire_Esempio_SPA.git"
+  },
+  "keywords": [
+    "SPA"
+  ],
+  "author": "Simone Cecire",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
