@@ -4,17 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esempio SPA - Cecire</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <div id="container" class="container">
-        <div id="page1" class="page">
+        <h1>Esempio SPA - Cecire</h1>
 
+        <div id="home" class="page">
+            <div class="row">
+                <h2>Home</h2>
+                <div class="col"><a href="#page1">Pagina 1</a></div>
+                <div class="col"><a href="#page2">Pagina 2</a></div>
+                <div class="col"><a href="#page3">Pagina 3</a></div>
+            </div>
+        </div>
+        <div id="page1" class="page">
+            <div class="row">
+                <h2>Pagina 1</h2>
+                <a href="#home">Home</a>
+            </div>
         </div>
         <div id="page2" class="page">
-
+            <div class="row">
+                <h2>Pagina 2</h2>
+                <a href="#home">Home</a>
+            </div>
         </div>
         <div id="page3" class="page">
-
+            <div class="row">
+                <h2>Pagina 3</h2>
+                <a href="#home">Home</a>
+            </div>
         </div>
     </div>
 
